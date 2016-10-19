@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{%block content%}
+	<h1>Nuevos comentarios</h1>
+
+	<h2>Estos son los post</h2>
+
+	<a href="{% url 'lista' %}">Todos los Comentarios</a>
+
+	<div id='Formulario'>
+		<form method="post" action=".">
+			{%csrf_token%}
+			{{form.as_p}}
+			<input class="btn btn-info btn-lg" type="submit" value="Guardar">
+		</form>
+	</div>
+
+
+
+{%endblock content%}

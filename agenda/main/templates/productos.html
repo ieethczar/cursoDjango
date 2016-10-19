@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Czar productos</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<a href="{% url 'blog' %}">
+			BLOG
+		</a>
+
+		<h1>Estos son los productos</h1>
+		
+		{% for producto in productos %}
+			<ul>
+				<li>{{producto.nombre}}</li>
+				<li>{{producto.desc}}</li>
+				<li>{{producto.precio}}</li>
+			</ul>
+		{% endfor %}
+
+		<a href="{% url 'home' %}">
+			VOLVER
+		</a>
+	</body>
+</html>

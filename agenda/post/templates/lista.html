@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{%block content%}
+	<h1>El block con la base</h1>
+
+	<h2>Estos son los post</h2>
+
+	<a href="{% url 'nuevo' %}">Nuevo Comentario</a>
+	
+	<table class='table'>
+		{%for post in posts%}
+			<tr>
+				<td>{{post.titulo}}</td>
+				<td>{{post.desc}}</td>
+				<td>{{post.autor}}</td>
+				<td>{{post.categoria}}</td>
+				<td><img src="{{post.img}}" class="img-responsive"></td>
+			</tr>
+		{%empty%}
+		<h3>No hay post U_U</h3>
+		{%endfor%}
+	</table>	
+
+	<!--div id='Formulario'>
+		<form method="post" action=".">
+			{%csrf_token%}
+			{{form.as_p}}
+		</form>
+	</div-->
+
+
+
+{%endblock content%}
